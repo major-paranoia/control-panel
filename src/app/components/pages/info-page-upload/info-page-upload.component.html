@@ -1,0 +1,41 @@
+<div id="cardContainer">
+    <mat-card class="cardItem">
+        <mat-card-header>
+            <mat-card-title><mat-icon aria-hidden="true" aria-label="Example article icon">article</mat-icon>Статьи</mat-card-title>
+            <mat-card-subtitle>Добавить статью</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                Текст статьи пишется в HTML. Остальное пишется обычным текстом.
+            </p>
+            <form class="articleForm" (ngSubmit)="onSubmit()">
+                <mat-form-field class="inputField">
+                    <mat-label>Заглавие</mat-label>
+                    <input matInput placeholder="Введите заглавие..." [formControl]="titleControl" required>
+                </mat-form-field>
+
+                <mat-form-field class="inputField">
+                    <mat-label>Текст статьи</mat-label>
+                    <textarea matInput placeholder="Контент..." [formControl]="contentControl" required></textarea>
+                </mat-form-field>
+
+                <mat-form-field class="inputField">
+                    <mat-label>Имя заглавного изображения статьи</mat-label>
+                    <input matInput placeholder="К примеру esgwfuoewugf23i42gui34.jpeg" [formControl]="fullImageControl" required>
+                </mat-form-field>
+
+                <mat-form-field class="inputField">
+                    <mat-label>Название страницы заглавными буквами</mat-label>
+                    <input matInput placeholder="К примеру НОВОЕ" [formControl]="categoryTitleControl" required>
+                </mat-form-field>
+
+                <mat-form-field class="inputField">
+                    <mat-label>Английский эквивалент в формате camelCase, который будет отображаться в ссылке.</mat-label>
+                    <input matInput placeholder="К примеру newInfoPage" [formControl]="categoriesIdControl" required>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" type="submit" id="submitButton">ОТПРАВИТЬ</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

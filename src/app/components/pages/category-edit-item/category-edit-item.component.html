@@ -1,0 +1,14 @@
+<form class="articleForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="inputField">
+        <mat-label>Название страницы заглавными буквами</mat-label>
+        <input matInput placeholder="К примеру НОВОЕ" [formControl]="categoryTitleControl" required>
+    </mat-form-field>
+
+    <mat-form-field class="inputField">
+        <mat-label>Английский эквивалент в формате camelCase, который будет отображаться в ссылке.</mat-label>
+        <input matInput placeholder="К примеру newInfoPage" [formControl]="categoriesIdControl" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" id="submitButton">ОТПРАВИТЬ</button>
+</form>

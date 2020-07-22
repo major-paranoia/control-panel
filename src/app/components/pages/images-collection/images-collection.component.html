@@ -1,0 +1,42 @@
+<div id="accordionContainer">
+    <mat-accordion>
+        <mat-expansion-panel class="accordionItem">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Загрузить новое изображение
+                </mat-panel-title>
+                <mat-panel-description>
+                    png/jpeg/jpg/webp
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ng-template matExpansionPanelContent>
+                <app-images-upload (addNewImage)="addNewImage($event)"></app-images-upload>
+            </ng-template>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="accordionItem" *ngFor="let image of images">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{image.filename}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{image.uploadDate}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ng-template matExpansionPanelContent>
+                <app-image-item 
+                    [image]="image"
+                    (deleteImage) = "deleteImage($event)"
+                >
+                </app-image-item>
+            </ng-template>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+
+<div id="spinnerContainer">
+    <mat-progress-spinner 
+        *ngIf="isLoading"
+        color="accent" 
+        mode="indeterminate">
+    </mat-progress-spinner>
+</div>

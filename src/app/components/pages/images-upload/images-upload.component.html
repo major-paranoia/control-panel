@@ -1,0 +1,21 @@
+<div id="uploadPanel">
+    <div *ngFor="let file of files">
+        <mat-progress-bar class="progressBar" [value]="file.progress"></mat-progress-bar>
+        <span>{{file.name}}</span>
+        <button mat-icon-button
+            color="primary"
+            (click)="removeFile(file)">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <button mat-raised-button color = "primary" (click) = "fileUpload.click()"><mat-icon>add</mat-icon>Добавить</button>
+    <input 
+        type="file"
+        style="display: none"
+        (change)="onFileSelected($event)"
+        multiple="multiple" 
+        accept="{{accept}}"
+        #fileUpload/>
+</div>
+
+<button mat-raised-button color = "primary" (click)="onUpload()"><mat-icon>upgrade</mat-icon>ЗАГРУЗИТЬ</button>
