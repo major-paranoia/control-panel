@@ -1,0 +1,14 @@
+<mat-card class="cardItem">
+    <mat-card-header>
+        <mat-card-title>{{article.title}}</mat-card-title>
+        <mat-card-subtitle>{{article._id}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+          {{article.subText}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="onDelete()">УДАЛИТЬ</button>
+    </mat-card-actions>
+</mat-card>

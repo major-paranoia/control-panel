@@ -1,0 +1,10 @@
+<div id="imagePanel">
+    <div id="imageContainer" [ngClass]="setClasses()">
+        <img src="{{imageSource}}" />
+    </div>
+</div>
+<div class="imageActions">
+    <button mat-raised-button color="primary" (click)="copyName()" >СКОПИРОВАТЬ НАЗВАНИЕ</button>
+    <button mat-raised-button color="primary" (click)="changeImageSize()" >УВЕЛИЧИТЬ</button>
+    <button mat-raised-button color="warn" (click)="onDelete()" >УДАЛИТЬ</button>
+</div>

@@ -1,0 +1,31 @@
+.cardItem{
+    width: 30%;
+    background-color: #f0f0f0;
+    margin-bottom: 45px;
+}
+
+.cardItem mat-card-actions{
+    text-align: right;
+}
+
+#cardContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80%;
+    padding-top: 25px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+mat-card-subtitle{
+    color: #212121;
+}
+
+.mat-icon {
+    vertical-align: bottom;
+    font-size: 20px;
+    width: 24px;
+    height: 20px;
+ }

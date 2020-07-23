@@ -1,0 +1,31 @@
+<div id="cardContainer">
+    <mat-card class="cardItem">
+        <mat-card-header>
+            <mat-card-title><mat-icon aria-hidden="true" aria-label="Example article icon">article</mat-icon>Статьи</mat-card-title>
+            <mat-card-subtitle>Добавить статью</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                Текст статьи пишется в HTML. Остальное пишется обычным текстом.
+            </p>
+            <form class="articleForm" (ngSubmit)="onSubmit()">
+                <mat-form-field class="inputField">
+                    <mat-label>Заглавие</mat-label>
+                    <input matInput placeholder="Введите заглавие..." [formControl]="titleControl" required>
+                </mat-form-field>
+
+                <mat-form-field class="inputField">
+                    <mat-label>Сопровождающий текст</mat-label>
+                    <textarea matInput placeholder="Текст который отображается под заглавием на превью" [formControl]="subTextControl" required></textarea>
+                </mat-form-field>
+
+                <mat-form-field class="inputField">
+                    <mat-label>Ссылка на видео для встраивания</mat-label>
+                    <input matInput placeholder="К примеру https://www.youtube.com/embed/RzYSUScCdjw" [formControl]="contentControl" required>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" type="submit" id="submitButton">ОТПРАВИТЬ</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

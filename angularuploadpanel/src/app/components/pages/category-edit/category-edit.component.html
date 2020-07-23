@@ -1,0 +1,28 @@
+<div id="accordionContainer">
+    <mat-accordion>
+        <mat-expansion-panel class="accordionItem" *ngFor="let category of categories">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{category.title}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{category.categoryId}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ng-template matExpansionPanelContent>
+                <app-category-edit-item 
+                    [category]="category"
+                    (editCategoryParameters) = "editCategoryParameters($event)"
+                >
+                </app-category-edit-item>
+            </ng-template>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+<div id="spinnerContainer">
+    <mat-progress-spinner 
+        *ngIf="isLoading"
+        color="accent" 
+        mode="indeterminate">
+    </mat-progress-spinner>
+</div>

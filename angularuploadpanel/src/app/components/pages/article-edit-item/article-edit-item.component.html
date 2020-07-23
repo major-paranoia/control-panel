@@ -1,0 +1,39 @@
+<form class="articleForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <mat-form-field class="inputField">
+        <mat-label>Заглавие</mat-label>
+        <input matInput placeholder="Введите заглавие..." [formControl]="titleControl" required>
+    </mat-form-field>
+
+    <mat-form-field class="inputField">
+        <mat-label>Сопровождающий текст</mat-label>
+        <textarea matInput placeholder="Текст который отображается под заглавием на превью" [formControl]="subTextControl" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="inputField">
+        <mat-label>Текст статьи</mat-label>
+        <textarea matInput placeholder="Контент..." [formControl]="contentControl" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="inputField">
+        <mat-label>Имя изображения для превью</mat-label>
+        <input matInput placeholder="К примеру 2hr3rh13r3rh1ouhro23.jpeg" [formControl]="previewImageControl" required>
+    </mat-form-field>
+
+    <mat-form-field class="inputField">
+        <mat-label>Имя заглавного изображения статьи</mat-label>
+        <input matInput placeholder="К примеру esgwfuoewugf23i42gui34.jpeg" [formControl]="fullImageControl" required>
+    </mat-form-field>
+
+    <mat-form-field class="inputField" appearance="fill">
+        <mat-label>Категория</mat-label>
+        <mat-select [formControl]="categoriesIdControl" required>
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let category of categories" [value]="category.categoryId">
+                {{category.title}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="categoriesIdControl.hasError('required')">Пожалуйста, выберите категорию</mat-error>
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary" type="submit" id="submitButton">ОТПРАВИТЬ</button>
+</form>

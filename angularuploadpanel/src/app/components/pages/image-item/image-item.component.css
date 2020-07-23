@@ -1,0 +1,29 @@
+#imageContainer img{
+    width: 100%;
+}
+
+#imageContainer{
+    transition-property: width;
+    transition-duration: 500ms;
+}
+
+#imagePanel{
+    width: 80%;
+    margin: auto;
+}
+
+.expandImage{
+    width: 75%;
+}
+
+.smallImage{
+    width: 32%;
+}
+
+.imageActions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60%; 
+    margin-left: auto;
+}

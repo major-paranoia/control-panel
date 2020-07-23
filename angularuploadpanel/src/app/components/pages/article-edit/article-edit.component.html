@@ -1,0 +1,28 @@
+<div id="accordionContainer">
+    <mat-accordion>
+        <mat-expansion-panel class="accordionItem" *ngFor="let article of articles">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{article.title}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{article._id}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ng-template matExpansionPanelContent>
+                <app-article-edit-item 
+                    [categories]="categories"
+                    [article]="article"
+                >
+                </app-article-edit-item>
+            </ng-template>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+<div id="spinnerContainer">
+    <mat-progress-spinner 
+        *ngIf="isLoading"
+        color="accent" 
+        mode="indeterminate">
+    </mat-progress-spinner>
+</div>

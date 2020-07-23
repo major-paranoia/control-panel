@@ -1,0 +1,16 @@
+<div id="deleteItemsContainer">
+    <app-trash-item
+        *ngFor = "let trash of trashArticles"
+        [trash] = "trash"
+        (deleteTrash)="deleteTrash($event)"
+        (recoverArticle)="recoverArticle($event)"
+    >
+    </app-trash-item>
+</div>
+<div id="spinnerContainer">
+    <mat-progress-spinner 
+        *ngIf="isLoading"
+        color="accent" 
+        mode="indeterminate">
+    </mat-progress-spinner>
+</div>

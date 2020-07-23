@@ -1,0 +1,18 @@
+<form class="articleForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <mat-form-field class="inputField">
+        <mat-label>Заглавие</mat-label>
+        <input matInput placeholder="Введите заглавие..." [formControl]="titleControl" required>
+    </mat-form-field>
+
+    <mat-form-field class="inputField">
+        <mat-label>Сопровождающий текст</mat-label>
+        <textarea matInput placeholder="Текст который отображается под заглавием на превью" [formControl]="subTextControl" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="inputField">
+        <mat-label>Ссылка на видео для встраивания</mat-label>
+        <input matInput placeholder="К примеру https://www.youtube.com/embed/RzYSUScCdjw" [formControl]="contentControl" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" id="submitButton">ОТПРАВИТЬ</button>
+</form>
